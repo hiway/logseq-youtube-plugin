@@ -164,9 +164,6 @@ async function main() {
                             if (include_metadata_as_block) { blocks.push(`${block_properties}`) }
                             if (include_tags_as_block) { blocks.push(`${tags.join(" ")}`) }
                             if (include_description) { blocks.push(`${data['description']}`) }
-
-                            let batch_blocks = blocks.map(it => ({ content: it }))
-                            
                             if (include_metadata_as_props) {
                                 // include_metadata_as_props is false until properties added here are parsed correctly
                                 await logseq.Editor.updateBlock(current_block!.uuid, formatted_text + "\n" + block_properties)
@@ -177,6 +174,8 @@ async function main() {
                                 // include_tags_as_props is false until properties added here are parsed correctly
                                 await logseq.Editor.upsertBlockProperty(current_block!, 'tags', tags.join(' '))
                             }
+
+                            let batch_blocks = blocks.map(it => ({ content: it }))
                             if (blocks.length > 0) {
                                 await logseq.Editor.insertBatchBlock(current_block!.uuid, batch_blocks, {sibling: false})
                             }
