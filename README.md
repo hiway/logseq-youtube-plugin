@@ -1,8 +1,6 @@
 ## Logseq YouTube Plugin
 
-### Status: Planning
-
-![Configuration](/images/screenshot.png "Configuration")
+![Configuration](/images/logseq-youtube-plugin-demo.gif "Configuration")
 
 Tools for Students of YouTube University
 
@@ -32,7 +30,7 @@ Tools for Students of YouTube University
 - Go to **Plugin Settings**.
 - Select correct plugin.
 
-![Configuration](/images/screenshot.png "Configuration")
+![Configuration](/images/logseq-youtube-plugin-settings.png "Configuration")
 
 
 ## Using the plugin
