@@ -1,0 +1,27 @@
+{
+  "name": "logseq-youtube-plugin",
+  "version": "0.0.1",
+  "description": "logseq-youtube-plugin",
+  "main": "dist/index.html",
+  "targets": {
+    "main": false
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "parcel build --no-source-maps index.html --public-url ./"
+  },
+  "keywords": [],
+  "author": "Harshad Sharma",
+  "license": "MIT",
+  "dependencies": {
+    "@logseq/libs": "0.0.1-alpha.35"
+  },
+  "logseq": {
+    "id": "logseq-youtube-plugin",
+    "title": "Logseq Youtube Plugin",
+    "icon": "icon.png"
+  },
+  "devDependencies": {
+    "parcel": "^2.0.0"
+  }
+}
