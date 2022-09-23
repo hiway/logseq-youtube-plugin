@@ -162,15 +162,15 @@ async function main() {
                             if (embed_thumbnail) { blocks.push(`![thumbnail](${thumbnail})`) }
                             if (embed_video) { blocks.push(`{{video ${link}}}`) }
                             if (include_metadata_as_block) { blocks.push(`${block_properties}`) }
-                            if (include_tags_as_block) { blocks.push(`${tags.join(" ")}`) }
-                            if (include_description) { blocks.push(`${data['description']}`) }
+                            if (include_tags_as_block && tags.length > 0) { blocks.push(`${tags.join(" ")}`) }
+                            if (include_description && data['description'] != "") { blocks.push(`${data['description']}`) }
                             if (include_metadata_as_props) {
                                 // include_metadata_as_props is false until properties added here are parsed correctly
                                 await logseq.Editor.updateBlock(current_block!.uuid, formatted_text + "\n" + block_properties)
                             } else {
                                 await logseq.Editor.updateBlock(current_block!.uuid, formatted_text)                           
                             }
-                            if (include_tags_as_props) {
+                            if (include_tags_as_props && tags.length > 0) {
                                 // include_tags_as_props is false until properties added here are parsed correctly
                                 await logseq.Editor.upsertBlockProperty(current_block!, 'tags', tags.join(' '))
                             }
